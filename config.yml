@@ -1,0 +1,90 @@
+# Срок жизни лота (часы). После истечения лот можно забрать через /ah my
+listing-duration-hours: 48
+
+# Максимум лотов на игрока (включая истёкшие, которые ещё не забрали)
+max-listings-per-player: 10
+
+# Границы цены (за весь стак)
+min-price: 1.0
+max-price: 1000000000.0
+
+# Налог с продажи, % (продавец получает цену минус налог)
+tax-percent: 5.0
+
+# Предметы, которые нельзя продавать (названия Material)
+blacklist:
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - CHAIN_COMMAND_BLOCK
+  - REPEATING_COMMAND_BLOCK
+  - STRUCTURE_BLOCK
+  - STRUCTURE_VOID
+  - JIGSAW
+  - DEBUG_STICK
+  - LIGHT
+
+# ---- Сообщения (формат MiniMessage) ----
+messages:
+  prefix: "<gradient:#ffb347:#ffcc33>[Аукцион]</gradient> "
+  player-only: "<red>Эта команда доступна только игрокам."
+  no-permission: "<red>У вас нет прав на это действие."
+  usage-sell: "<red>Использование: <white>/ah sell <цена>"
+  hold-item: "<red>Возьмите предмет в основную руку."
+  invalid-price: "<red>Некорректная цена."
+  price-range: "<red>Цена должна быть от <gold><min></gold> до <gold><max></gold>."
+  blacklisted: "<red>Этот предмет нельзя продавать на аукционе."
+  limit-reached: "<red>Вы достигли лимита лотов: <white><limit></white>. Заберите или продайте старые."
+  listed: "<green>Лот выставлен: <white><item> x<amount></white> за <gold><price></gold> на <white><hours></white> ч."
+  not-found: "<red>Лот не найден — возможно, его уже купили или срок истёк."
+  own-listing: "<red>Нельзя купить собственный лот."
+  no-money: "<red>Недостаточно средств. Нужно: <gold><price></gold>."
+  no-economy: "<red>Экономика сейчас недоступна. Сообщите администратору."
+  tx-failed: "<red>Не удалось провести транзакцию."
+  bought: "<green>Вы купили <white><item> x<amount></white> за <gold><price></gold>."
+  sold: "<green><white><buyer></white> купил ваш лот <white><item> x<amount></white>. Вы получили <gold><payout></gold> <gray>(налог <tax>%)"
+  returned: "<green>Предмет возвращён вам."
+  inventory-full: "<yellow>Инвентарь заполнен — часть предметов выпала под ноги."
+  expired-notice: "<yellow>У вас истёкших лотов: <white><count></white>. Заберите их: <white>/ah my"
+  reloaded: "<green>Конфиг перезагружен."
+  help:
+    - "<gold>/ah <gray>— открыть аукцион"
+    - "<gold>/ah sell <цена> <gray>— продать предмет из руки (цена за весь стак)"
+    - "<gold>/ah my <gray>— мои лоты и истёкшие"
+
+# ---- Интерфейс ----
+gui:
+  title-all: "<dark_gray>Аукцион <gray>(<page>/<pages>)"
+  title-mine: "<dark_gray>Мои лоты <gray>(<page>/<pages>)"
+  title-confirm: "<dark_gray>Подтвердите покупку"
+  btn-prev: "<yellow>← Назад"
+  btn-next: "<yellow>Вперёд →"
+  btn-mine: "<gold>Мои лоты <gray>(<count>/<limit>)"
+  btn-all: "<green>Все лоты"
+  btn-refresh: "<aqua>Обновить"
+  btn-info: "<white>Страница <yellow><page><gray>/<yellow><pages>"
+  btn-yes: "<green><bold>Купить за <price>"
+  btn-no: "<red><bold>Отмена"
+  lore-all:
+    - ""
+    - "<gray>Цена: <gold><price>"
+    - "<gray>Продавец: <white><seller>"
+    - "<gray>Осталось: <white><time>"
+    - ""
+    - "<yellow>ЛКМ — купить"
+  lore-mine:
+    - ""
+    - "<gray>Цена: <gold><price>"
+    - "<gray>Осталось: <white><time>"
+    - ""
+    - "<yellow>ЛКМ — снять с продажи"
+  lore-expired:
+    - ""
+    - "<gray>Цена: <gold><price>"
+    - "<red>Срок истёк"
+    - ""
+    - "<yellow>ЛКМ — забрать предмет"
+  lore-confirm:
+    - ""
+    - "<gray>Цена: <gold><price>"
+    - "<gray>Продавец: <white><seller>"

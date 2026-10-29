@@ -1,0 +1,23 @@
+name: SimpleAuction
+version: '${version}'
+main: com.example.auction.AuctionPlugin
+api-version: '1.21'
+description: Аукцион /ah
+depend: [Vault]
+
+commands:
+  ah:
+    description: Аукцион
+    usage: /<command> [sell <цена> | my | help]
+    aliases: [auction, auc]
+
+permissions:
+  auction.use:
+    description: Открывать аукцион и покупать лоты
+    default: true
+  auction.sell:
+    description: Выставлять лоты
+    default: true
+  auction.admin:
+    description: Перезагрузка конфига
+    default: op
